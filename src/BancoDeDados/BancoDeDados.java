@@ -90,7 +90,7 @@ public class BancoDeDados {
             ps.setInt(1, horario.getId());
             ps.setTimestamp(2, horario.getHorarioPartida());
             ps.setTimestamp(3, horario.getHorarioChegada());
-            ps.setInt(1, horario.getTremId());
+            ps.setInt(4, horario.getTremId());
             ps.execute();
         } catch (SQLException e) {
             if(conn == null) {
@@ -117,7 +117,7 @@ public class BancoDeDados {
             ps.setInt(1, feedback.getId());
             ps.setString(2, feedback.getDescricao());
             ps.setTimestamp(3, feedback.getData());
-            ps.setInt(1, feedback.getPassageiroId());
+            ps.setInt(4, feedback.getPassageiroId());
             ps.execute();
         } catch (SQLException e) {
             if(conn == null) {
@@ -170,7 +170,7 @@ public class BancoDeDados {
             ps.setInt(1, statusViagem.getId());
             ps.setInt(2, statusViagem.getAtraso());
             ps.setString(3, statusViagem.getDesvio());
-            ps.setInt(1, statusViagem.getTremId());
+            ps.setInt(4, statusViagem.getTremId());
             ps.execute();
         } catch (SQLException e) {
             if(conn == null) {

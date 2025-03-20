@@ -1,7 +1,5 @@
 package Notificacao;
 
-import java.time.LocalDateTime;
-
 public class Notificacao {
 
     private int id;

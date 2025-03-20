@@ -2,8 +2,8 @@ package Passageiro;
 
 import Feedback.Feedback;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class Passageiro {
 
@@ -46,6 +46,6 @@ public class Passageiro {
     }
 
     public Feedback darFeedback() {
-        return new Feedback(1, "Descrição do Feedback", LocalDateTime.now());
+        return new Feedback(1, "Descrição do Feedback", Timestamp.valueOf(LocalDateTime.now()), getId());
     }
 }

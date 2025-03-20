@@ -2,7 +2,6 @@ package Horario;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class Horario {
 

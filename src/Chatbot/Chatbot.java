@@ -3,6 +3,7 @@ package Chatbot;
 import Feedback.Feedback;
 import Notificacao.Notificacao;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Chatbot {
@@ -36,7 +37,7 @@ public class Chatbot {
     }
 
     public Feedback coletarFeedback() {
-        return new Feedback(1, "Serviço bom", LocalDateTime.now());
+        return new Feedback(1, "Serviço bom", Timestamp.valueOf(LocalDateTime.now()), 1);
     }
 
     public Notificacao enviarNotificacao() {

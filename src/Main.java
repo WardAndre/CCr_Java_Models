@@ -18,40 +18,58 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws SQLException {
         // Teste Chatbot
-        Chatbot chatbot = new Chatbot(1, "Assistente de Transporte");
+        Chatbot chatbot = new Chatbot(2, "Assistente de Informações");
 
         // Teste Passageiro
-        Passageiro passageiro = new Passageiro(1, "Carlos Silva", "123456789");
+        Passageiro passageiro = new Passageiro(2, "Maria", "3672315671");
 
         // Teste Trem
-        Trem trem = new Trem(1, 100, "Em espera");
+        Trem trem = new Trem(2, 75, "Em serviço");
 
         // Teste Horario
-        Timestamp partida = Timestamp.valueOf(LocalDateTime.now().plusMinutes(30)); // Partida em 30 minutos
-        Timestamp chegada = Timestamp.valueOf(LocalDateTime.now().plusHours(2));   // Chegada em 2 horas
-        Horario horario = new Horario(1, partida, chegada, trem.getId());
+        Timestamp partida = Timestamp.valueOf(LocalDateTime.now());
+        Timestamp chegada = Timestamp.valueOf(LocalDateTime.now().plusHours(1));
+        Horario horario = new Horario(2, partida, chegada, trem.getId());
 
         // Teste Feedback
-        Feedback feedback = new Feedback(1, "Muito bom", Timestamp.valueOf(LocalDateTime.now()), passageiro.getId());
+        Feedback feedback = new Feedback(2, "Ótima viagem", Timestamp.valueOf(LocalDateTime.now()), passageiro.getId());
 
         // Teste Notificacao
-        Notificacao notificacaoTeste = new Notificacao(1, "Alteração de horário", "Alerta");
+        Notificacao notificacao = new Notificacao(2, "Trem em espera", "Alerta");
 
         // Teste StatusViagem
-        StatusViagem statusViagem = new StatusViagem(1, false, "Sem desvio", trem.getId());
+        StatusViagem statusViagem = new StatusViagem(2, true, "Esperando liberação", trem.getId());
 
         // Teste PrevisaoDemanda
         List<Horario> dadosHistoricos = new ArrayList<>();
         dadosHistoricos.add(horario);
-        PrevisaoDemanda previsaoDemanda = new PrevisaoDemanda(1, dadosHistoricos);
+        PrevisaoDemanda previsaoDemanda = new PrevisaoDemanda(2, dadosHistoricos);
 
         // Teste CentroControleOperacoes
-        CentroControleOperacoes cco = new CentroControleOperacoes(1, "Centro de Controle Operacional");
+        CentroControleOperacoes cco = new CentroControleOperacoes(2, "Centro de Controle de Segurança");
 
 
 
         // Teste BancoDeDados
         BancoDeDados bancoDeDados = new BancoDeDados();
+
+//        System.out.println(bancoDeDados.inserirChatBot(chatbot) ? "Chatbot adicionado!" : "Chatbot não adicionado!");
+
+//        System.out.println(bancoDeDados.inserirPassageiro(passageiro) ? "Passageiro adicionado!" : "Passageiro não adicionado!");
+
+//        System.out.println(bancoDeDados.inserirTrem(trem) ? "Trem adicionado!" : "Trem não adicionado!");
+
+//        System.out.println(bancoDeDados.inserirHorario(horario) ? "Horario adicionado!" : "Horario não adicionado!");
+//
+//        System.out.println(bancoDeDados.inserirFeedBack(feedback) ? "Feedback adicionado!" : "Feedback não adicionado!");
+//
+//        System.out.println(bancoDeDados.inserirNotificacao(notificacao) ? "Notificação adicionado!" : "Notificação não adicionado!");
+//
+//        System.out.println(bancoDeDados.inserirStatusViagem(statusViagem) ? "StatusViagem adicionado!" : "StatusViagem não adicionado!");
+//
+//        System.out.println(bancoDeDados.inserirPrevisaoDemanda(previsaoDemanda) ? "PrevisaoDemanda adicionado!" : "PrevisaoDemanda não adicionado!");
+//
+//        System.out.println(bancoDeDados.inserirCentroControleOperacoes(cco) ? "CentroControleOperacoes adicionado!" : "CentroControleOperacoes não adicionado!");
 
     }
 }
