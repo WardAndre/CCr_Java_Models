@@ -2,13 +2,15 @@ package PrevisaoDemanda;
 
 import Horario.Horario;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class PrevisaoDemanda {
 
     private int id;
     private List<Horario> dadosHistoricos;
-    private String picoPrevisto;
+    private Timestamp picoPrevisto;
 
     public PrevisaoDemanda(int id, List<Horario> dadosHistoricos) {
         this.id = id;
@@ -32,15 +34,15 @@ public class PrevisaoDemanda {
         this.dadosHistoricos = dadosHistoricos;
     }
 
-    public String getPicoPrevisto() {
+    public Timestamp getPicoPrevisto() {
         return picoPrevisto;
     }
 
-    public void setPicoPrevisto(String picoPrevisto) {
+    public void setPicoPrevisto(Timestamp picoPrevisto) {
         this.picoPrevisto = picoPrevisto;
     }
 
-    public String preverPico() {
-        return "Horário de pico";
+    public Timestamp preverPico() {
+        return Timestamp.valueOf(LocalDateTime.now().plusHours(1));
     }
 }

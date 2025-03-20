@@ -3,6 +3,8 @@ package Chatbot;
 import Feedback.Feedback;
 import Notificacao.Notificacao;
 
+import java.time.LocalDateTime;
+
 public class Chatbot {
 
     private int id;
@@ -29,15 +31,15 @@ public class Chatbot {
         this.nome = nome;
     }
 
-    public String fornecerInformacoes() {
-        return "Mensagem de retorno com informações sobre horários e status dos trens.";
+    public String fornecerInformacao() {
+        return "Informação atualizada sobre horários e status dos trens.";
     }
 
     public Feedback coletarFeedback() {
-        return new Feedback("Nome ou título", "Descrição do Feedback", 1);
+        return new Feedback(1, "Serviço bom", LocalDateTime.now());
     }
 
     public Notificacao enviarNotificacao() {
-        return new Notificacao(1, "Corpo da mensagem", "tipo da notificação", "Data e hora do envio");
+        return new Notificacao(1, "Notificação enviada com sucesso", "Informação");
     }
 }

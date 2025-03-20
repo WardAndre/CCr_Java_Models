@@ -4,11 +4,11 @@ public class Trem {
 
     private int id;
     private String status;
-    private int lotacao;
+    private int capacidade;
 
-    public Trem(int id, int lotacao, String status) {
+    public Trem(int id, int capacidade, String status) {
         this.id = id;
-        this.lotacao = lotacao;
+        this.capacidade = capacidade;
         this.status = status;
     }
 
@@ -28,12 +28,12 @@ public class Trem {
         this.status = status;
     }
 
-    public int getLotacao() {
-        return lotacao;
+    public int getCapacidade() {
+        return capacidade;
     }
 
-    public void setLotacao(int lotacao) {
-        this.lotacao = lotacao;
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
     }
 
     public String atualizarStatus() {

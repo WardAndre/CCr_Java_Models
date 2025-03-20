@@ -1,33 +1,21 @@
 package Horario;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 public class Horario {
 
-    private String partida;
-    private String chegada;
     private int id;
+    private Timestamp horarioPartida;
+    private Timestamp horarioChegada;
     private int tremId;
 
-    public Horario(String partida, String chegada, int id, int tremId) {
-        this.partida = partida;
-        this.chegada = chegada;
+    public Horario(int id, Timestamp horarioPartida, Timestamp horarioChegada, int tremId) {
         this.id = id;
+        this.horarioPartida = horarioPartida;
+        this.horarioChegada = horarioChegada;
         this.tremId = tremId;
-    }
-
-    public String getPartida() {
-        return partida;
-    }
-
-    public void setPartida(String partida) {
-        this.partida = partida;
-    }
-
-    public String getChegada() {
-        return chegada;
-    }
-
-    public void setChegada(String chegada) {
-        this.chegada = chegada;
     }
 
     public int getId() {
@@ -38,6 +26,14 @@ public class Horario {
         this.id = id;
     }
 
+    public Timestamp getHorarioPartida() {
+        return horarioPartida;
+    }
+
+    public void setHorarioPartida(Timestamp horarioPartida) {
+        this.horarioPartida = horarioPartida;
+    }
+
     public int getTremId() {
         return tremId;
     }
@@ -46,8 +42,27 @@ public class Horario {
         this.tremId = tremId;
     }
 
-    public boolean verificarHorario() {
-        boolean horaAtualAnteriorChegada = true;
-        return horaAtualAnteriorChegada ? true : false;
+    public Timestamp getHorarioChegada() {
+        return horarioChegada;
+    }
+
+    public void setHorarioChegada(Timestamp horarioChegada) {
+        this.horarioChegada = horarioChegada;
+    }
+
+    public String verificarHorario() {
+        LocalDateTime agora = LocalDateTime.now();
+
+        // Convertendo Timestamp para LocalDateTime
+        LocalDateTime partida = horarioPartida.toLocalDateTime();
+        LocalDateTime chegada = horarioChegada.toLocalDateTime();
+
+        if (agora.isBefore(partida)) {
+            return "Ainda não partiu";
+        } else if (agora.isAfter(chegada)) {
+            return "Atrasado";
+        } else {
+            return "No horário";
+        }
     }
 }

@@ -1,17 +1,17 @@
 package Notificacao;
 
+import java.time.LocalDateTime;
+
 public class Notificacao {
 
     private int id;
     private String mensagem;
     private String tipo;
-    private String dataEnvio;
 
-    public Notificacao(int id, String mensagem, String tipo, String dataEnvio) {
+    public Notificacao(int id, String mensagem, String tipo) {
         this.id = id;
         this.mensagem = mensagem;
         this.tipo = tipo;
-        this.dataEnvio = dataEnvio;
     }
 
     public int getId() {
@@ -36,14 +36,6 @@ public class Notificacao {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public String getDataEnvio() {
-        return dataEnvio;
-    }
-
-    public void setDataEnvio(String dataEnvio) {
-        this.dataEnvio = dataEnvio;
     }
 
     public boolean enviarNotificacao() {
